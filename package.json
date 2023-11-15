@@ -37,6 +37,7 @@
     "path-to-regexp": "6.2.1",
     "pinia": "2.1.7",
     "screenfull": "6.0.2",
+    "unplugin-auto-import": "^0.16.7",
     "vue": "3.3.8",
     "vue-router": "4.2.5",
     "vxe-table": "4.4.1",

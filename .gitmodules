@@ -1,0 +1,3 @@
+[submodule "ProTable"]
+	path = ProTable
+	url = https://github.com/machachong/ProTable.git

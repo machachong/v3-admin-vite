@@ -7,6 +7,7 @@ import vueJsx from "@vitejs/plugin-vue-jsx"
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons"
 import svgLoader from "vite-svg-loader"
 import UnoCSS from "unocss/vite"
+import AutoImport from "unplugin-auto-import/vite"
 
 /** 配置项文档：https://cn.vitejs.dev/config */
 export default (configEnv: ConfigEnv): UserConfigExport => {
@@ -29,7 +30,7 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       /** 端口号 */
       port: 3333,
       /** 是否自动打开浏览器 */
-      open: false,
+      open: true,
       /** 跨域设置允许 */
       cors: true,
       /** 端口被占用时，是否直接退出 */
@@ -87,7 +88,11 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
         symbolId: "icon-[dir]-[name]"
       }),
       /** UnoCSS */
-      UnoCSS()
+      UnoCSS(),
+      AutoImport({
+        imports: ["vue", "vue-router", "pinia"],
+        dts: "src/auto-import.d.ts"
+      })
     ],
     /** Vitest 单元测试配置：https://cn.vitest.dev/config */
     test: {
